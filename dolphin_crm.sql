@@ -1,7 +1,5 @@
 DROP DATABASE IF EXISTS dolphin_crm;
 CREATE DATABASE IF NOT EXISTS dolphin_crm;
-CHARACTER SET utf8mb4
-COLLATE utf8mb4_general_ci;
 USE dolphin_crm;
 
 CREATE TABLE users (
@@ -10,9 +8,9 @@ CREATE TABLE users (
     lastname VARCHAR(100) NOT NULL,
     password VARCHAR(255) NOT NULL,
     email VARCHAR(150) NOT NULL UNIQUE,
-    role VARCHAR(50) NOT NULL,              -- admin, user, etc.
+    role VARCHAR(50) NOT NULL,
     created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
-);
+) ENGINE=InnoDB;
 
 CREATE TABLE contacts (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -23,12 +21,11 @@ CREATE TABLE contacts (
     telephone VARCHAR(50),
     company VARCHAR(150),
     type ENUM('sales lead', 'support') NOT NULL,
-    assigned_to INT NOT NULL,                -- FK to users.id
-    created_by INT NOT NULL,                 -- FK to users.id
+    assigned_to INT NULL,    -- allow NULL because ON DELETE SET NULL
+    created_by INT NOT NULL,
     created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_at DATETIME NULL ON UPDATE CURRENT_TIMESTAMP,
 
-    -- Foreign keys
     CONSTRAINT fk_contacts_assigned_to
         FOREIGN KEY (assigned_to) REFERENCES users(id)
         ON DELETE SET NULL ON UPDATE CASCADE,
@@ -36,16 +33,15 @@ CREATE TABLE contacts (
     CONSTRAINT fk_contacts_created_by
         FOREIGN KEY (created_by) REFERENCES users(id)
         ON DELETE CASCADE ON UPDATE CASCADE
-);
+) ENGINE=InnoDB;
 
 CREATE TABLE notes (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    contact_id INT NOT NULL,                 -- FK to contacts.id
+    contact_id INT NOT NULL,
     comment TEXT NOT NULL,
-    created_by INT NOT NULL,                 -- FK to users.id
+    created_by INT NOT NULL,
     created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
-    -- Foreign keys
     CONSTRAINT fk_notes_contact
         FOREIGN KEY (contact_id) REFERENCES contacts(id)
         ON DELETE CASCADE ON UPDATE CASCADE,
@@ -53,8 +49,7 @@ CREATE TABLE notes (
     CONSTRAINT fk_notes_user
         FOREIGN KEY (created_by) REFERENCES users(id)
         ON DELETE CASCADE ON UPDATE CASCADE
-);
-
+) ENGINE=InnoDB;
 
 LOCK TABLES `users` WRITE;
 
