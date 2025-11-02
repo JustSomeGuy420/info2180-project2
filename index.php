@@ -1,13 +1,5 @@
 <?php include 'config.php'; ?>
-
-
-<!DOCTYPE html>
-<html>
-<head>
-<title>Login</title>
-<link rel="stylesheet" href="assets/css/style.css">
-</head>
-<body>
+<?php include 'includes/header.php'; ?>
 
 <h2>Login</h2>
 <form method="POST" action="dashboard.php">
