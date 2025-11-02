@@ -17,17 +17,21 @@ document.querySelectorAll(".load-page").forEach(link => {
 });
 
 document.addEventListener("submit", e => {
-  if (e.target.id === "profileForm") {
+  if (e.target.id === "loginForm") {
     e.preventDefault();
     const formData = new FormData(e.target);
 
-    fetch("ajax/update_profile.php", {
+    fetch("ajax/login.php", {
       method: "POST",
       body: formData
     })
     .then(res => res.text())
-    .then(msg => {
-      document.getElementById("updateMsg").innerText = msg;
+    .then(data => {
+      if (data.trim() === "success") {
+        window.location = "dashboard.php";
+      } else {
+        document.getElementById("loginMessage").innerText = data;
+      }
     });
   }
 });

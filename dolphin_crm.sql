@@ -53,6 +53,6 @@ CREATE TABLE notes (
 
 LOCK TABLES `users` WRITE;
 
-INSERT INTO users (firstname, lastname, email, password, role) VALUES ('Jane', 'Doe', 'admin@project2.com', 'password123', 'admin');
+INSERT INTO users (firstname, lastname, email, password, role) VALUES ('Jane', 'Doe', 'admin@project2.com', '$2y$10$IDXPWRCchz4X2HConEloXegfB9FwpzpyERxiDEVKkV/TRzTbgmtne', 'admin');
 
 UNLOCK TABLES;
