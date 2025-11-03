@@ -8,6 +8,7 @@ if (!isset($_SESSION['user_id'])) {
 
 $page = "../content/" . $_POST['page'];
 if (file_exists($page)) {
+    $param = $_POST['param'];
     include $page;
 } else {
     echo "Page not found.";
