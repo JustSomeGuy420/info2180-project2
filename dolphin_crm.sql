@@ -20,11 +20,11 @@ CREATE TABLE contacts (
     email VARCHAR(150),
     telephone VARCHAR(50),
     company VARCHAR(150),
-    type ENUM('sales lead', 'support') NOT NULL,
+    type ENUM('Sales Lead', 'Support') NOT NULL,
     assigned_to INT NULL,    -- allow NULL because ON DELETE SET NULL
     created_by INT NOT NULL,
     created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    updated_at DATETIME NULL ON UPDATE CURRENT_TIMESTAMP,
+    updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 
     CONSTRAINT fk_contacts_assigned_to
         FOREIGN KEY (assigned_to) REFERENCES users(id)
@@ -53,6 +53,6 @@ CREATE TABLE notes (
 
 LOCK TABLES `users` WRITE;
 
-INSERT INTO users (firstname, lastname, email, password, role) VALUES ('Jane', 'Doe', 'admin@project2.com', '$2y$10$IDXPWRCchz4X2HConEloXegfB9FwpzpyERxiDEVKkV/TRzTbgmtne', 'admin');
+INSERT INTO users (firstname, lastname, email, password, role) VALUES ('Jane', 'Doe', 'admin@project2.com', '$2y$10$IDXPWRCchz4X2HConEloXegfB9FwpzpyERxiDEVKkV/TRzTbgmtne', 'Admin');
 
 UNLOCK TABLES;

@@ -1,13 +1,27 @@
 <?php
-session_start();
-require_once '../config.php';
+require_once "../includes/db.php";
+require_once "../includes/auth.php";
 
-$user_id = $_SESSION['user_id'];
-$contact_id = $_POST['contact_id'];
-$comment = $_POST['comment'];
+require_login();
+header("Content-Type: application/json");
 
-$stmt = $conn->prepare("INSERT INTO notes(contact_id, comment, created_by) VALUES (?, ?, ?)");
-$stmt->bind_param("isi", $contact_id, $comment, $user_id);
-$stmt->execute();
+$contactId = $_POST['contact_id'] ?? null;
+$comment   = trim($_POST['comment'] ?? '');
+$userId    = $_SESSION['user_id'];
 
-echo "Note added successfully.";
+if ($comment === '') {
+    echo json_encode(["success" => false, "message" => "Note cannot be empty."]);
+    exit;
+}
+
+$stmt = $pdo->prepare("
+    INSERT INTO notes (contact_id, comment, created_by)
+    VALUES (?, ?, ?)
+");
+
+$stmt->execute([$contactId, $comment, $userId]);
+
+echo json_encode([
+    "success" => true,
+    "message" => "Note added."
+]);

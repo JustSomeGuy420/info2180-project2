@@ -6,13 +6,12 @@ require_login();
 header("Content-Type: application/json");
 
 $contactId = $_POST['id'] ?? null;
-$userId = $_SESSION['user_id'];
 
 $stmt = $pdo->prepare("
     UPDATE contacts
-    SET assigned_to = ?
+    SET type = IF(type='Sales Lead','Support','Sales Lead')
     WHERE id = ?
 ");
-$stmt->execute([$userId, $contactId]);
+$stmt->execute([$contactId]);
 
 echo json_encode(["success" => true]);
