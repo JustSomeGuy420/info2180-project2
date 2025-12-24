@@ -1,0 +1,12 @@
+#head {
+    display:flex;
+    align-items: center;
+    justify-content:space-between;
+}
+
+table {
+    clear: both;
+    width: 100%;
+    text-align: center;
+
+}
