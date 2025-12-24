@@ -12,9 +12,9 @@ function loadContact() {
             if (!data.success) return;
 
             const c = data.contact;
+            document.getElementById("headTag").innerHTML = `${c.name}`;
 
             document.getElementById("contactDetails").innerHTML = `
-                <p><strong>Name:</strong> ${c.name}</p>
                 <p><strong>Email:</strong> ${c.email}</p>
                 <p><strong>Telephone:</strong> ${c.telephone}</p>
                 <p><strong>Company:</strong> ${c.company}</p>
@@ -22,11 +22,13 @@ function loadContact() {
                 <p><strong>Assigned To:</strong> ${c.assigned_name}</p>
                 <p><strong>Created By:</strong> ${c.created_by}</p>
                 <p><strong>Date Created:</strong> ${c.created_at}</p>
+                <p><strong>Last Updated:</strong> ${c.updated_at}</p>
             `;
 
             document.getElementById("typeBtn").style.display = "inline-block";
 
-            if (!c.assigned_to) {
+            document.getElementById("assignBtn").style.display = "none";
+            if (Number(c.assigned_to) != Number(USER_ID)) {
                 document.getElementById("assignBtn").style.display = "inline-block";
             }
         });

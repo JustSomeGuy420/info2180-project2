@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
             tbody.innerHTML = "";
 
             if (!data.success || data.users.length === 0) {
-                tbody.innerHTML = "<tr><td colspan='4'>No users found.</td></tr>";
+                tbody.innerHTML = "<tr><td>No users found.</td></tr>";
                 return;
             }
 
@@ -30,6 +30,6 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         .catch(() => {
             document.getElementById("usersTable").innerHTML =
-                "<tr><td colspan='4'>Failed to load users.</td></tr>";
+                "<tr><td>Failed to load users.</td></tr>";
         });
 });

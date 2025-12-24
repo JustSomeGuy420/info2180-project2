@@ -14,17 +14,23 @@ if (!$contactId) {
     <meta charset="UTF-8">
     <title>Contact Details</title>
     <script src="../assets/js/contact.js" defer></script>
+    <link rel="stylesheet" href="../assets/css/contact.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
 
 <?php include '../includes/sidebar.php'; ?>
 
-<h2>Contact Details</h2>
+<div id="head">
+    <h2 id="headTag">Contact Details</h2>
+
+    <div>
+        <button id="assignBtn" style="display:none;">Assign to me</button>
+        <button id="typeBtn" style="display:none;">Switch Type</button>
+    </div>
+</div>
 
 <div id="contactDetails">Loading...</div>
-
-<button id="assignBtn" style="display:none;">Assign to me</button>
-<button id="typeBtn" style="display:none;">Switch Type</button>
 
 <hr>
 
@@ -42,6 +48,7 @@ if (!$contactId) {
 
 <script>
     const CONTACT_ID = <?= (int)$contactId ?>;
+    const USER_ID = <?= (int)$_SESSION['user_id'] ?>;
 </script>
 
 </body>

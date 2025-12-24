@@ -38,6 +38,7 @@ echo json_encode([
             ? htmlspecialchars($contact['assigned_first'] . " " . $contact['assigned_last'])
             : "Unassigned",
         "created_by" => htmlspecialchars($contact['creator_first'] . " " . $contact['creator_last']),
-        "created_at" => $contact['created_at']
+        "created_at" => $contact['created_at'],
+        "updated_at" => $contact['updated_at']
     ]
 ]);

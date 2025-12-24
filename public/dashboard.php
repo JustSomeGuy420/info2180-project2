@@ -9,14 +9,17 @@ require_login();
     <meta charset="UTF-8">
     <title>Dashboard</title>
     <script src="../assets/js/dashboard.js" defer></script>
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
 
 <?php include '../includes/sidebar.php'; ?>
 
-<h1>Dashboard</h1>
-
-<button id="add">+ Add Contact</button>
+<div id="head">
+    <h1>Dashboard</h1>
+    <button id="add">+ Add Contact</button>
+</div>
 
 <!-- Filters -->
 <div>
@@ -26,7 +29,7 @@ require_login();
     <button data-filter="mine">Assigned to me</button>
 </div>
 
-<br>
+
 
 <table border="1" cellpadding="8" cellspacing="0">
     <thead>
