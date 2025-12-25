@@ -38,7 +38,6 @@ require_login();
             <th>Email</th>
             <th>Company</th>
             <th>Type</th>
-            <th></th>
         </tr>
     </thead>
     <tbody id="contactsTable">
