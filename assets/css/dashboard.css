@@ -1,12 +1,30 @@
-#head {
+#head{
     display:flex;
     align-items: center;
     justify-content:space-between;
 }
 
-table {
-    clear: both;
-    width: 100%;
-    text-align: center;
+button{
+    margin-bottom: 13px;
+}
 
+button#add{
+    margin-top: 27px;
+}
+
+table{
+    clear: both;
+}
+
+td a{
+    color: rgba(0, 0, 128,0.85);
+    text-decoration: none;
+}
+
+td a:hover{
+    color: rgb(0, 0, 128);
+}
+
+td a:visited{
+    color: rgb(0, 0, 128);
 }
