@@ -1,11 +1,11 @@
-div#formContainer {
+div#formContainer{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 2fr;
     gap: 10px;
 }
 
-button[type="submit"] {
+button[type="submit"]{
     float: right;
 }
 
@@ -14,37 +14,37 @@ select[name="assigned_to"]{
     grid-row: 5;
 }
 
-select[name="title"] {
+select[name="title"]{
     grid-column: 1;
     grid-row: 1;
 }
 
-input[name="firstname"] {
+input[name="firstname"]{
     grid-column: 1;
     grid-row: 2;
 }
 
-input[name="lastname"] {
+input[name="lastname"]{
     grid-column: 2;
     grid-row: 2;
 }
 
-input[name="email"] {
+input[name="email"]{
     grid-column: 1;
     grid-row: 3;
 }
 
-input[name="telephone"] {
+input[name="telephone"]{
     grid-column: 2;
     grid-row: 3;
 }
 
-input[name="company"] {
+input[name="company"]{
     grid-column: 1;
     grid-row: 4;
 }
 
-select[name="type"] {
+select[name="type"]{
     grid-column: 2;
     grid-row: 4;
 }

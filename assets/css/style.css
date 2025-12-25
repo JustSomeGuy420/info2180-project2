@@ -32,6 +32,21 @@ input, select{
   border-radius: 5px;
 }
 
+table{
+  width: 100%;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border: none;
+  border-collapse: collapse;
+}
+
+table th{
+  background-color: rgba(0, 0, 128,0.85);
+  color: white;
+  border: none;
+}
+
 ul{
   list-style-type: none;
   margin: 0;
@@ -54,19 +69,4 @@ ul li a{
 
 ul li a:hover{
   background-color: rgb(0, 0, 128);
-}
-
-table{
-  width: 100%;
-  text-align: center;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  border: none;
-  border-collapse: collapse;
-}
-
-table th{
-  background-color: rgba(0, 0, 128,0.85);
-  color: white;
-  border: none;
 }

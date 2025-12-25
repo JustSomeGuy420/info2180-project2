@@ -29,8 +29,6 @@ require_login();
     <button data-filter="mine">Assigned to me</button>
 </div>
 
-
-
 <table border="1" cellpadding="8" cellspacing="0">
     <thead>
         <tr>

@@ -1,36 +1,36 @@
-#formContainer {
+#formContainer{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     gap: 10px;
 }
 
-input[name="firstname"] {
+input[name="firstname"]{
     grid-column: 1;
     grid-row: 1;
 }
 
-input[name="lastname"] {
+input[name="lastname"]{
     grid-column: 2;
     grid-row: 1;
 }
 
-input[name="email"] {
+input[name="email"]{
     grid-column: 1;
     grid-row: 2;
 }
 
-input[name="password"] {
+input[name="password"]{
     grid-column: 2;
     grid-row: 2;
 }
 
-select[name="role"] {
+select[name="role"]{
     grid-column: 1;
     grid-row: 3;
 }
 
-button[type="submit"] {
+button[type="submit"]{
     width:fit-content;
     float: right;
     margin-top: 10px;
