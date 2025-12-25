@@ -29,8 +29,6 @@ require_login();
     <button data-filter="mine">Assigned to me</button>
 </div>
 
-
-
 <table border="1" cellpadding="8" cellspacing="0">
     <thead>
         <tr>
@@ -38,7 +36,7 @@ require_login();
             <th>Email</th>
             <th>Company</th>
             <th>Type</th>
-            <th></th>
+            <th>View Contact</th>
         </tr>
     </thead>
     <tbody id="contactsTable">
