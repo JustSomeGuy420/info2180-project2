@@ -51,7 +51,7 @@ table td{
   border: none;
 }
 
-ul{
+.navbar{
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -59,11 +59,11 @@ ul{
   background-color: rgba(0, 0, 128,0.85);
 }
 
-ul li{
+.navbar li {
   float: left;
 }
 
-ul li a{
+.navbar li a {
   display: block;
   color: white;
   text-align: center;
@@ -71,6 +71,6 @@ ul li a{
   text-decoration: none;
 }
 
-ul li a:hover{
+.navbar li a:hover{
   background-color: rgb(0, 0, 128);
 }
