@@ -9,7 +9,7 @@ button[type="submit"]{
     float: right;
 }
 
-select[name="assigned_to"]{
+#assigned{
     grid-column: 1;
     grid-row: 5;
 }

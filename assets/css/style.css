@@ -47,6 +47,10 @@ table th{
   border: none;
 }
 
+table td{
+  border: none;
+}
+
 ul{
   list-style-type: none;
   margin: 0;
