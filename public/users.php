@@ -10,34 +10,36 @@ require_admin();
     <meta charset="UTF-8">
     <title>Users</title>
     <script src="../assets/js/users.js" defer></script>
-    <link rel="stylesheet" href="../assets/css/users.css">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/users.css">
 </head>
 <body>
 
 <?php include '../includes/sidebar.php'; ?>
 
-<div>
-    <h2 id="heading">Users</h2>
+<div class="contentBox">
+    <div class="head">
+        <h2 id="heading">Users</h2>
 
-    <button id="add">+ Add User</button>
+        <button id="add">+ Add User</button>
+    </div>
+
+    <table border="1" cellpadding="8" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Date Created</th>
+            </tr>
+        </thead>
+        <tbody id="usersTable">
+            <tr>
+                <td>Loading...</td>
+            </tr>
+        </tbody>
+    </table>
 </div>
-
-<table border="1" cellpadding="8" cellspacing="0">
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Role</th>
-            <th>Date Created</th>
-        </tr>
-    </thead>
-    <tbody id="usersTable">
-        <tr>
-            <td>Loading...</td>
-        </tr>
-    </tbody>
-</table>
 
 </body>
 </html>
